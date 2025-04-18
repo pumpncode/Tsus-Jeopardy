@@ -200,7 +200,7 @@ SMODS.Joker{
                         return{
                             remove = true
                         }
-                    elseif G.consumeables.cards >= G.consumeables.config.card_limit then
+                    elseif #G.consumeables.cards >= G.consumeables.config.card_limit then
                         ease_hands_played(1)
                         card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("...Your consumables are full, Player."), colour = HEX('CA4DDF')})
                     end
