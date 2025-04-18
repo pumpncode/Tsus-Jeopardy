@@ -200,9 +200,9 @@ SMODS.Joker{
                         return{
                             remove = true
                         }
-                    elseif #G.consumeables.cards >= G.consumeables.config.card_limit then
-                        ease_hands_played(1)
+                    elseif #G.consumeables.cards >= G.consumeables.config.card_limit and celbufferfullcon == 0 or nil then
                         card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("...Your consumables are full, Player."), colour = HEX('CA4DDF')})
+                        celbufferfullcon = 1
                     end
                 end
             end
@@ -224,6 +224,7 @@ SMODS.Joker{
             card_eval_status_text(card, 'extra', nil, nil, nil, {message = (crycharge[math.random(#crycharge)]), colour = HEX('CA4DDF')})
             card.ability.extra.charge = card.ability.extra.charge+0.2
         elseif context.joker_main then
+            celbufferfullcon = 0
             return ({
                 mult = (G.GAME.hands[context.scoring_name].level)^(card.ability.extra.charge)
             })
