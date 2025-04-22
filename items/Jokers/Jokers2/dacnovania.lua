@@ -14,9 +14,8 @@ SMODS.Joker{
         return {vars = {G.GAME.probabilities.normal or 1, card.ability.extra.odds*2, card.ability.extra.odds, card.ability.extra.storedmult, card.ability.extra.hasstored, card.ability.extra.hashalved}}
     end,
     calculate = function(self, card, context)
-        local handmult = to_number(mult)
         if context.before and card.ability.extra.hasstored == 0 then
-            card.ability.extra.storedmult = card.ability.extra.storedmult+(handmult/2)
+            card.ability.extra.storedmult = card.ability.extra.storedmult+(mult/2)
             card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("*stored."), colour = HEX('A01C1D')})
         end
         if context.joker_main and pseudorandom('dacnovania') < G.GAME.probabilities.normal/card.ability.extra.odds then
