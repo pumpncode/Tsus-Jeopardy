@@ -14,7 +14,7 @@ SMODS.Joker{
         return {vars = {G.GAME.probabilities.normal or 1, card.ability.extra.wishcost, card.ability.extra.odds+2, card.ability.extra.odds+8, card.ability.extra.odds+88, card.ability.extra.rarepity, card.ability.extra.legendarypity, card.ability.extra.raresoftpity, card.ability.extra.legendarysoftpity, card.ability.extra.jokerrarity}}
     end,
     calculate = function(self, card, context)
-        if context.setting_blind and G.GAME.dollars >= card.ability.extra.wishcost and #G.jokers.cards < G.jokers.config.card_limit then
+        if context.setting_blind and G.GAME.dollars > to_big(6) and card.ability.extra.wishcost and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
             ease_dollars(card.ability.extra.wishcost*-1)
             card:juice_up(0.5)
             card.ability.extra.jokerrarity = 0
