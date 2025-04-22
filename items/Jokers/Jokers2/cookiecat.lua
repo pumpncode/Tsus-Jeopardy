@@ -22,10 +22,10 @@ SMODS.Joker{
                 card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("Aww.."), colour = HEX('FFEED1')})
                 ease_dollars(-2)
             end
-        elseif context.end_of_round and card.ability.extra.checked ~= 0 then
+        elseif context.end_of_round and card.ability.extra.checked == 0 then
             card.ability.extra.checked = 1
             card.ability.extra.usesremaining = card.ability.extra.usesremaining-1
-        elseif context.end_of_round and card.ability.extra.checked == 0 then
+        elseif context.end_of_round and card.ability.extra.usesremaining == 0 then
             card:juice_up(0.3, 0.4)
             G.jokers:remove_card(card)
             card:remove()
