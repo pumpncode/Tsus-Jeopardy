@@ -2,25 +2,19 @@
 --- MOD_NAME: Tsu's Jeopardy
 --- MOD_ID: TsusJeo
 --- MOD_AUTHOR: [tje.tsu]
---- MOD_DESCRIPTION: Whole lotta Rolling
+--- MOD_DESCRIPTION: Balatro Gambling
 --- BADGE_COLOR: 1DA387
 --- PREFIX: tje
---- VERSION: 0.0.05 [TEST RELEASE]
+--- VERSION: 0.0.15 [TEST RELEASE]
 ----------------------------------------------
 ------------MOD CODE -------------------------
-----------------Boosters-------------------------
---assert(SMODS.load_file('items/Boosters/WagerBoosters/wagerbase.lua'))()
---assert(SMODS.load_file('items/Boosters/BlankBoosters/blankbase.lua'))()
-----------------Wager Consumable-----------------
---assert(SMODS.load_file('items/Consumables/wagerConsumables.lua'))()
-----------------Blank Consumable-----------------
---assert(SMODS.load_file('items/Consumables/blankConsumables.lua'))()
 ----------------tokens-------------------------------
 assert(SMODS.load_file('items/Consumables/tokenConsumables.lua'))()
 ----------------Jokers---------------------------
 assert(SMODS.load_file('items/Jokers/HexlegJokers.lua'))() --- Hexxed Legendaries
 assert(SMODS.load_file('items/Jokers/ComingSoonJokers.lua'))()
-----------------Sounds---------------------------
+assert(SMODS.load_file('items/Jokers/Jokers2/Jokers2.lua'))()
+----------------etc---------------------------
 assert(SMODS.load_file('essential/TjeLib.lua'))()
 ----------------Enhancements---------------------
 -----------------------Decks-----------------------------------
@@ -53,6 +47,12 @@ SMODS.Atlas{
 SMODS.Atlas{
     key = 'Jokers',
     path = 'Jokers.png',
+    px = 71,
+    py = 95
+}
+SMODS.Atlas{
+    key = 'Jokers2',
+    path = 'Jokers2.png',
     px = 71,
     py = 95
 }
@@ -124,8 +124,8 @@ G.ARGS.LOC_COLOURS.thmtron = SMODS.Gradients.tje_thmmtrongradient
 G.ARGS.LOC_COLOURS.hextxt = SMODS.Gradients.tje_hexgradie
 G.C.KusuriPopText = HEX('D33245')
 G.C.tsusjeopardytxt = HEX('1DA387')
-G.C.celestite = HEX('CA4DDF')
 G.ARGS.LOC_COLOURS.tsusjeopardytxt = G.C.tsusjeopardytxt
-G.ARGS.LOC_COLOURS.celestite = G.C.celestite
+G.C.clstite = HEX('CA4DDF')
+G.ARGS.LOC_COLOURS.clstite = G.C.clstite
 ----------------------------------------------
 ------------MOD CODE END----------------------
