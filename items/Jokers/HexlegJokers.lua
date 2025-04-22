@@ -226,7 +226,7 @@ SMODS.Joker{
         elseif context.joker_main then
             celbufferfullcon = 0
             return ({
-                mult = (G.GAME.hands[context.scoring_name].level)^(card.ability.extra.charge)
+                mult = (to_number(G.GAME.hands[context.scoring_name].level))^(card.ability.extra.charge)
             })
         end
     end
