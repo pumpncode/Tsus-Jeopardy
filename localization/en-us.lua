@@ -276,7 +276,7 @@ return{
                     "{C:green}#1#{} in {C:green}#2#{} chance to",
                     "{C:blue}level up{} played hand",
                     "{C:green}#1#{} in {C:green}#2#{} to also {C:red}lose{} {C:money}$2{}",
-                    "{C:inactive,s:0.75}[#3# Hands Remaining]{}",
+                    "{C:inactive,s:0.75}[#3# Rounds Remaining]{}",
                     "{C:inactive}-------------------------{}",
                     '{s:0.85,C:inactive}"He left his family behind!"{}'
                 }
