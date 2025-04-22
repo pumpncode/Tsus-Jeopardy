@@ -1,8 +1,8 @@
 SMODS.Joker{
     key = 'cookiecat',
     atlas = 'Jokers2',
-    rarity = 2, 
-    cost = 4, 
+    rarity = 1, 
+    cost = 3, 
     unlocked = true, 
     discovered = true, 
     blueprint_compat = false, 
@@ -24,7 +24,7 @@ SMODS.Joker{
                 card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("Aww.."), colour = HEX('FFEED1')})
                 ease_dollars(-2)
             end
-            if card.ability.extra.usesremaining == 0 and context.after then
+            if card.ability.extra.usesremaining == 0 and context.post_joker then
                 card:juice_up(0.3, 0.4)
                 G.jokers:remove_card(card)
                 card:remove()
