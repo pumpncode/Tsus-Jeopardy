@@ -1,18 +1,9 @@
 SMODS.Consumable{
-    key = 'Schnorange',
+    key = 'schnorange',
     set = 'TokenConsumable',
     atlas = 'TokenConsumableAtlas',
     pos = {x = 0, y = 0},
     cost = 0,
-    loc_txt = {
-        name = "A {C:mult}Slice{} of {C:attention}Life{}",
-        text = {
-            "Adds {X:mult,C:white}X1.5{} to {C:attention}Schneider{}.",
-            "{C:green}#1#{} in {C:green}#4#{} chance to {C:red}Destroy{} her {C:green}instead{}.",
-            "{C:red}Self Destruct{} after {C:attention}Big Blind{}.",
-            "{C:green,s:0.75}#1#{} {C:inactive,s:0.75}in{} {C:green,s:0.75}#5#{} {C:inactive,s:0.75}chance to{} {C:mult,s:0.75}Lose{} {C:money,s:0.75}$20{} {C:inactive,s:0.75}when sold.{}"
-        }
-    },
     can_use = function()
         return true
     end,
@@ -35,20 +26,11 @@ SMODS.Consumable{
     end
 }
 SMODS.Consumable{ -- some code taken from JEns Almanac.. idk how to level up like that
-    key = 'Celestite',
+    key = 'celestite',
     set = 'TokenConsumable',
     atlas = 'TokenConsumableAtlas',
     pos = {x = 1, y = 0},
     soul_pos = {x = 2, y = 0},
-    loc_txt = {
-        name = "{C:celestite}Celestite{}",
-        text = {
-            "{C:celestite}+3 Levels{} to {C:blue}Most Played Hand{}",
-            "{C:attention}Add{} {X:celestite,C:white}0.15{} {X:celestite,C:white}Charge{} to {C:celestite}CRYSTA//{}.",
-            '{C:inactive}"Floating Space Rock..."{}'
-
-        }
-    },
     can_use = function()
         return true
     end,
@@ -65,7 +47,7 @@ SMODS.Consumable{ -- some code taken from JEns Almanac.. idk how to level up lik
 		level_up_hand(card, hand, nil, card.ability.extra.levels)
 	end
 }
-SMODS.Consumable{ -- some code taken from JEns Almanac.. idk how to level up like that
+SMODS.Consumable{
     key = 'thmmedicin',
     set = 'TokenConsumable',
     atlas = 'TokenConsumableAtlas',
@@ -75,7 +57,7 @@ SMODS.Consumable{ -- some code taken from JEns Almanac.. idk how to level up lik
         text = {
             "{C:inactive,s:0.75}[Drug]{}",
             "{C:chips}Chips{} and {C:mult}Mult{} are {C:thmtron}Multiplied{}",
-            "to {C:thmtron}eachother{} then {C:attention}Quartered{}",
+            "to {C:thmtron}eachother{} then {C:attention}Halved{}",
             "{C:attention}after {C:blue}scoring{}",
             "{s:0.65,C:inactive}(Lasts for 1 Round)",
             "{s:0.55,C:inactive}FAIR WARNING :{}",

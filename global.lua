@@ -12,6 +12,31 @@ TJ = {
         "Straight",
         "Straight Flush",
         "Royal Flush",
-        "High Card"
+        "High Card",
+        "Three of a Kind",
+        "Four of a Kind"
+    },
+    mutations = { --too lazy to make a weighted pool rn, will optimize in a later date teehee
+        "Wet",
+        "Wet",
+        "Wet",
+        "Wet",
+        "Golden",
+        "Golden",
+        "Rainbow",
+        "Rainbow",
+        "Chocolate",
+        "Chocolate",
+        "Shocked",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
     }
 }
