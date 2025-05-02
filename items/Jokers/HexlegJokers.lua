@@ -12,13 +12,14 @@ SMODS.Joker{
     soul_pos = {x = 7, y = 1},
     config = {extra = { odds = 8, xmult = 1, orangescale = 1.5, heartscaletext = 1, diamondscaletext = 8, clubscaletext = 50, spadescaletext = 150, heartscale = 0, diamondscale = 0, clubscale = 0, spadescale = 0, hasscored = 0, heartscaleafter = .1}},
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.c_tje_schnorange
         return { vars = { G.GAME.probabilities.normal, card.ability.extra.odds, card.ability.extra.xmult, card.ability.extra.orangescale, card.ability.extra.heartscaletext, card.ability.extra.diamondscaletext, card.ability.extra.clubscaletext, card.ability.extra.spadescaletext, card.ability.extra.heartscale+1*1, card.ability.extra.diamondscale+1*8, card.ability.extra.clubscale+1*50, card.ability.extra.spadescale+1*150, card.ability.extra.hasscored} }
     end,
     calculate = function(self, card, context)
         if context.end_of_round and G.GAME.blind.boss and not context.blueprint  then
             if #G.consumeables.cards < G.consumeables.config.card_limit then --morefluff code lol!
                   card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("...?"), colour = G.C.MULT})
-                  local n_card = create_card(nil,G.consumeables, nil, nil, nil, nil, 'c_tje_Schnorange', 'sup')
+                  local n_card = create_card(nil,G.consumeables, nil, nil, nil, nil, 'c_tje_schnorange', 'sup')
                   n_card:add_to_deck()
                   G.consumeables:emplace(n_card)
             end
@@ -138,6 +139,7 @@ SMODS.Joker{
     soul_pos = {x = 1, y = 2},
     config = {extra = {odds = 3, hasyappedatend = 0, hasyappedatconcerned = 0, charge = 1}},
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.c_tje_celestite
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.hasyappedatend, card.ability.extra.hasyappedatconcerned, card.ability.extra.charge} }
     end,
     calculate = function(self, card, context)
@@ -193,7 +195,7 @@ SMODS.Joker{
                 if v.config.center == G.P_CENTERS.m_stone and #context.full_hand == 1 and context.cardarea == G.play and not context.blueprint then
                     if v.edition and v.edition.polychrome and context.destroy_card and context.destroy_card == context.full_hand[1] and #G.consumeables.cards < G.consumeables.config.card_limit then
                         ease_hands_played(1)
-                        local c_card = create_card(nil,G.consumeables, nil, nil, nil, nil, 'c_tje_Celestite', 'sup')
+                        local c_card = create_card(nil,G.consumeables, nil, nil, nil, nil, 'c_tje_celestite', 'sup')
                         c_card:add_to_deck()
                         G.consumeables:emplace(c_card)
                         card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("Mineral Purified!"), colour = HEX('CA4DDF')})

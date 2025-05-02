@@ -9,7 +9,7 @@ SMODS.Joker{
     eternal_compat = false,
     perishable_compat = true,
     pos = {x = 2, y = 0},
-    config = {extra = {odds = 4, xmult = 4}},
+    config = {extra = {odds = 3, xmult = 3}},
     loc_vars = function(self, info_queue, card)
         return {vars = {G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.xmult}}
     end,

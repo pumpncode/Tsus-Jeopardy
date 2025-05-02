@@ -525,7 +525,7 @@ return{
             j_tje_kindmita = {
                 name = "Kind Mita",
                 text = {
-                    "If played hand is a {C:attention}High Card{}",
+                    "If played hand is a {C:attention}Straight{}",
                     "Enhance all {C:attention}Played{} Cards to a",
                     "{C:green}Random{} {C:attention}Enhancement{}",
                     "{C:inactive}----------------------------{}",

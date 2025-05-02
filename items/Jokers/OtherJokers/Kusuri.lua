@@ -58,8 +58,8 @@ SMODS.Joker{
             "krn",
             "hkr",
             "szk",
-            --"nno" -- yet to be fixed
-            "hhr"
+            --"nno",
+            "szk"
 
         }
         local KusuriPotionTable = {
@@ -215,40 +215,36 @@ SMODS.Joker{
                 colour = HEX('332D5A')
             }
         end----------------------------------EVERYTHING BELOW THIS IS NANO
-        if card.ability.extra.gfstate == "nno" and card.ability.extra.roundcount > 0 and card.ability.extra.state == 2 and context.cardarea == G.play then
-            if card.ability.extra.gfstate == "nno" and card.ability.extra.roundcount > 0 and card.ability.extra.state == 2 and  context.cardarea == G.play and not G.play.cards[1] == nil then
-                if G.play.cards[1]:get_id() ~= 14 then
-                    cardplayed = G.play.cards[1]
-                    assert(SMODS.change_base(cardplayed, nil, "Ace"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
+        if card.ability.extra.gfstate == "nno" and card.ability.extra.roundcount > 0 and card.ability.extra.state == 2 and context.cardarea == G.play and #G.play.cards >= 5 then
+            if G.play.cards[1]:get_id() ~= 14 then
+                cardplayed = G.play.cards[1]
+                assert(SMODS.change_base(cardplayed, nil, "Ace"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
             end
-            if card.ability.extra.gfstate == "nno" and card.ability.extra.roundcount > 0 and card.ability.extra.state == 2 and context.cardarea == G.play and context.hand_name == "Flush" then
-                if G.play.cards[1]:get_id() ~= 13 then
-                    cardplayed2 = G.play.cards[1]
-                    assert(SMODS.change_base(cardplayed2, nil, "Ace"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
-                if G.play.cards[2]:get_id() ~= 13 then
-                    cardplayed2 = G.play.cards[2]
-                    assert(SMODS.change_base(cardplayed2, nil, "King"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
-                if G.play.cards[3]:get_id() ~= 12 then
-                    cardplayed3 = G.play.cards[3]
-                    assert(SMODS.change_base(cardplayed3, nil, "Queen"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
-                if G.play.cards[4]:get_id() ~= 11 then
-                    cardplayed4 = G.play.cards[4]
-                    assert(SMODS.change_base(cardplayed4, nil, "Jack"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
-                if G.play.cards[5]:get_id() ~= 10 then
-                    cardplayed5 = G.play.cards[5]
-                    assert(SMODS.change_base(cardplayed5, nil, "10"))
-                    card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
-                end
+            if G.play.cards[1]:get_id() ~= 13 then
+                cardplayed2 = G.play.cards[1]
+                assert(SMODS.change_base(cardplayed2, nil, "Ace"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
+            end
+            if G.play.cards[2]:get_id() ~= 13 then
+                cardplayed2 = G.play.cards[2]
+                assert(SMODS.change_base(cardplayed2, nil, "King"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
+            end
+            if G.play.cards[3]:get_id() ~= 12 then
+                cardplayed3 = G.play.cards[3]
+                assert(SMODS.change_base(cardplayed3, nil, "Queen"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
+            end
+            if G.play.cards[4]:get_id() ~= 11 then
+                cardplayed4 = G.play.cards[4]
+                assert(SMODS.change_base(cardplayed4, nil, "Jack"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
+            end
+            if G.play.cards[5]:get_id() ~= 10 then
+                cardplayed5 = G.play.cards[5]
+                assert(SMODS.change_base(cardplayed5, nil, "10"))
+                card.ability.extra.nnoxmult = card.ability.extra.nnoxmult+card.ability.extra.nnoscalexmult
             end
         elseif card.ability.extra.gfstate == "nno" and card.ability.extra.roundcount > 0 and card.ability.extra.state == 2 and context.joker_main then
             return{
