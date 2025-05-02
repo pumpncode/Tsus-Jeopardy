@@ -26,9 +26,9 @@ SMODS.Joker{
     calc_dollar_bonus = function(self, card)-------------STUPID PAYOUTTHING
         if pseudorandom('risingshine') < G.GAME.probabilities.normal/card.ability.extra.odds then
             card_eval_status_text(card, 'extra', nil, nil, nil, {message = "Zzz...", colour = HEX('fecb13')})
-            bonus = math.floor((G.GAME.interest_cap/7.5*card.ability.extra.stage))
+            bonus = math.floor((G.GAME.interest_cap/7.5*card.ability.extra.stage*-1))
             return bonus
-        else bonus = math.floor((G.GAME.interest_cap/7.5*card.ability.extra.stage*-1))
+        else bonus = math.floor((G.GAME.interest_cap/7.5*card.ability.extra.stage))
             card_eval_status_text(card, 'extra', nil, nil, nil, {message = "^o^", colour = HEX('fecb13')})
             return bonus
         end
