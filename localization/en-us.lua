@@ -481,7 +481,7 @@ return{
                     "At {C:green}Random{}",
                     "{C:green}One{} of the listed {C:attention}Ranks{} is",
                     "the {C:tsusjeopardytxt}Correct{} rank",
-                    "{C:money}$#4#{} for each scored {C:tsusjeopardytxt}Correct{} rank",
+                    "{C:money}$#4#{} for each played {C:tsusjeopardytxt}Correct{} rank",
                     "{C:inactive,s:0.85}[{}{C:attention,s:0.85}#1#{} {C:attention,s:0.85}#2#{} {C:attention,s:0.85}#3#{}{C:inactive,s:0.85}]{}",
                     "{C:inactive}---------------------------------{}",
                     '{s:0.85,C:inactive}"SHES STROGGIN MY BEEF TILL IM OFF."{}'
@@ -525,7 +525,7 @@ return{
             j_tje_kindmita = {
                 name = "Kind Mita",
                 text = {
-                    "If played hand is a {C:attention}High Card{}",
+                    "If played hand is a {C:attention}Straight{}",
                     "Enhance all {C:attention}Played{} Cards to a",
                     "{C:green}Random{} {C:attention}Enhancement{}",
                     "{C:inactive}----------------------------{}",
