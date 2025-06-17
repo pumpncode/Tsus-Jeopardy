@@ -59,11 +59,17 @@ SMODS.Joker{
                     colour = HEX("787888")
                 }
             elseif card.ability.extra.choseneffect == "Common" and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-                SMODS.add_card{
-                    set = 'Joker',
-                    area = G.jokers,
-                    rarity = 0.1
-                }
+                G.GAME.joker_buffer = G.GAME.joker_buffer+1
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        SMODS.add_card{
+                            set = 'Joker',
+                            area = G.jokers,
+                            rarity = 0.1
+                            }
+                            G.GAME.joker_buffer = G.GAME.joker_buffer-1
+                        return true
+                    end}))
                 return {
                     message = "Yahaha!",
                     colour = HEX("787888")

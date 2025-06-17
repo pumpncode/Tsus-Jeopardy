@@ -26,7 +26,6 @@ SMODS.Joker{
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-            
         card.ability.extra.mutation = pseudorandom_element(TJ.mutations, pseudoseed('candyblossomadd'))
         local function randomdecimal(minimum, maximum)
             return math.random()*(maximum-minimum) + minimum
@@ -67,7 +66,9 @@ SMODS.Joker{
         card.ability.extra.shockedxchips = (1+math.floor(card.ability.extra.worth/35))
     end,
     calculate = function(self, card, context)
-        
+        if card.sell_cost ~= card.ability.extra.worth then
+            card.sell_cost = card.ability.extra.worth
+        end
         if context.joker_main and card.ability.extra.mutation == "Golden" then
             ease_dollars(card.ability.extra.goldpayout)
             return {

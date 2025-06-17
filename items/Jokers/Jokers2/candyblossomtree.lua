@@ -15,11 +15,17 @@ SMODS.Joker{
     end,
     calculate = function(self, card, context)
         if context.setting_blind and  #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-            SMODS.add_card{
-                set = 'Joker',
-                area = G.jokers,
-                key = 'j_tje_candyblossom'
-            }
+            G.GAME.joker_buffer = G.GAME.joker_buffer+1
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    SMODS.add_card{
+                        set = 'Joker',
+                        area = G.jokers,
+                        key = 'j_tje_candyblossom'
+                    }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer-1
+                    return true
+                end}))
             return {
                 message = "Harvested!",
                 colour = HEX('EF8BFF')

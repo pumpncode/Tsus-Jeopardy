@@ -15,6 +15,7 @@ SMODS.Joker{
     end,
     calculate = function(self, card, context)
         if context.setting_blind and G.GAME.dollars+G.GAME.dollar_buffer >= to_big(card.ability.extra.wishcost) and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+            G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             ease_dollars(card.ability.extra.wishcost*-1)
             card:juice_up(0.5)
             card.ability.extra.jokerrarity = 0
@@ -63,6 +64,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 0.95
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
              -------------------------UNCOMMON RARESOFTPITY-----------------------------
             elseif card.ability.extra.jokerrarity == 1 and card.ability.extra.rarepity == 8 and card.ability.extra.legendarypity < 74 then
@@ -77,6 +79,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 0.95
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
                 -----------------------UNCOMMON LEGENDARYSOFTPITY--------------------------------------------
             elseif card.ability.extra.jokerrarity == 1 and card.ability.extra.rarepity < 8 and card.ability.extra.legendarypity >= 74 then
@@ -91,6 +94,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 0.95
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
              -------------------------UNCOMMON RARESOFTPITY AND LEGENDARYSOFTPITY-----------------------------
             elseif card.ability.extra.jokerrarity == 1 and card.ability.extra.rarepity == 8 and card.ability.extra.legendarypity >= 74 then
@@ -106,6 +110,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 0.95
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
               ------------------------------------RARE CHECKS-----------------------------------------------
             elseif card.ability.extra.jokerrarity == 2 and card.ability.extra.legendarypity < 74 then
@@ -120,6 +125,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 1
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
             elseif card.ability.extra.jokerrarity == 2 and card.ability.extra.legendarypity >= 74 then
                 card.ability.extra.rarepity = 0
@@ -134,6 +140,7 @@ SMODS.Joker{
                         area = G.jokers,
                         rarity = 1
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true end }))
              ------------------------------LEGENDARY CHECKS---------------------------------------
             elseif card.ability.extra.jokerrarity == 3 then
@@ -149,6 +156,7 @@ SMODS.Joker{
                         area = G.jokers,
                         legendary = true
                     }
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                     return true
                 end }))
             elseif card.ability.extra.jokerrarity == 0 then
@@ -156,6 +164,7 @@ SMODS.Joker{
                 card.ability.extra.rarepity = card.ability.extra.rarepity+1
                 print('qiqid')
                 card_eval_status_text(card, 'extra', nil, nil, nil, {message = ("Coco... goat..."), colour = HEX('CA91CC')})
+                G.GAME.joker_buffer = G.GAME.joker_buffer-1
             end
         end
     end

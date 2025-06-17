@@ -14,7 +14,7 @@ SMODS.Joker{
         return {vars = {card.ability.extra.retrig}}
     end,
     calculate = function(self, card, context)
-        if context.repetition and context.cardarea == G.play then
+        if context.repetition then
             if context.scoring_name == "High Card" then
                 print('Check!')
                 card.ability.extra.retrig = math.random(0,5)
